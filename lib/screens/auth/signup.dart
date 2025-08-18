@@ -79,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
             _confirmPasswordController.clear();
             _phoneController.clear();
             _addressController.clear();
-            
+
             // Navigate to login page
             Navigator.pushAndRemoveUntil(
               context,
@@ -103,7 +103,7 @@ class _SignupScreenState extends State<SignupScreen> {
           setState(() {
             _isLoading = false;
           });
-          
+
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('Error: ${e.toString()}'),
@@ -135,7 +135,7 @@ class _SignupScreenState extends State<SignupScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 20),
-                
+
                 // Logo and Title
                 Center(
                   child: Column(
@@ -164,9 +164,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     ],
                   ),
                 ),
-                
+
                 const SizedBox(height: 30),
-                
+
                 // Welcome Text
                 const Text(
                   'Create Account',
@@ -186,9 +186,9 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                
+
                 const SizedBox(height: 40),
-                
+
                 // Username Field
                 _buildTextField(
                   controller: _usernameController,
@@ -202,9 +202,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // First Name and Last Name Row
                 Row(
                   children: [
@@ -239,9 +239,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                   ],
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // Email Field
                 _buildTextField(
                   controller: _emailController,
@@ -259,9 +259,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // Password Field
                 _buildTextField(
                   controller: _passwordController,
@@ -285,9 +285,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // Confirm Password Field
                 _buildTextField(
                   controller: _confirmPasswordController,
@@ -311,9 +311,9 @@ class _SignupScreenState extends State<SignupScreen> {
                     return null;
                   },
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // Phone Field
                 _buildTextField(
                   controller: _phoneController,
@@ -322,20 +322,27 @@ class _SignupScreenState extends State<SignupScreen> {
                   icon: Icons.phone_outlined,
                   keyboardType: TextInputType.phone,
                 ),
-                
+
                 const SizedBox(height: 20),
-                
-                // Address Field
+
+
+                 // Address Field
                 _buildTextField(
                   controller: _addressController,
                   label: 'Address (Optional)',
-                  hint: 'Enter your full address',
+                  hint: 'Enter your full address (min. 10 characters)',
                   icon: Icons.location_on_outlined,
                   maxLines: 2,
+                  validator: (value) {
+                    if (value != null && value.isNotEmpty && value.length < 10) {
+                      return 'Address must be at least 10 characters if provided';
+                    }
+                    return null;
+                  },
                 ),
-                
+
                 const SizedBox(height: 40),
-                
+
                 // Signup Button
                 Container(
                   height: 56,
@@ -382,9 +389,9 @@ class _SignupScreenState extends State<SignupScreen> {
                           ),
                   ),
                 ),
-                
+
                 const SizedBox(height: 30),
-                
+
                 // Sign In Link
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

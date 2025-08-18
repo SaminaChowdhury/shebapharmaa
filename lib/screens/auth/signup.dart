@@ -326,7 +326,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 const SizedBox(height: 20),
 
 
-                 // Address Field
+                // Address Field
                 _buildTextField(
                   controller: _addressController,
                   label: 'Address (Optional)',
@@ -334,8 +334,8 @@ class _SignupScreenState extends State<SignupScreen> {
                   icon: Icons.location_on_outlined,
                   maxLines: 2,
                   validator: (value) {
-                    if (value != null && value.isNotEmpty && value.length < 10) {
-                      return 'Address must be at least 10 characters if provided';
+                    if ((value?.isNotEmpty ?? false) && value!.length < 10) {
+                      return 'Address must be at least 10 characters';
                     }
                     return null;
                   },

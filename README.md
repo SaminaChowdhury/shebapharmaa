@@ -38,7 +38,6 @@ flutter run
 * **Home & Navigation:** Categories, Featured medicines, Bottom navigation
 * **Medicine Browsing:** Search, filters, sorting, stock status, grid layout
 * **Medicine Details:** Complete info, reviews, add to cart, favorite medicines
-* **UI/UX:** Modern Material 3 design, responsive layout, smooth animations
 
 ---
 

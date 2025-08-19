@@ -66,3 +66,22 @@ lib/
 <p align="center"> <img src="assets/ui/Splash Screen (1).png" width="200" /> <img src="assets/ui/Login form.png" width="200" /> <img src="assets/ui/Registration form.png" width="200" /> </p> <p align="center"> <img src="assets/ui/Home screen.png" width="200" /> <img src="assets/ui/Browse Medicine.png" width="200" /> <img src="assets/ui/Browse medicine sorting.png" width="200" /> </p> <p align="center"> <img src="assets/ui/Medicine detail.png" width="200" /> <img src="assets/ui/Cart.png" width="200" /> <img src="assets/ui/Checkout.png" width="200" /> </p> <p align="center"> <img src="assets/ui/Order history.png" width="200" /> <img src="assets/ui/payment.png" width="200" /> <img src="assets/ui/Payment slip.png" width="200" /> </p> <p align="center"> <img src="assets/ui/profile.png" width="200" /> </p>
 
 
+---
+
+## 🔧 **Configuration**
+
+### **API Configuration**
+
+The app connects to the **Sheba AI backend API**. The base URL is configured in:
+
+`lib/core/services/api_service.dart`
+
+```dart
+static const String baseUrl = 'https://shebaai.pythonanywhere.com/api';
+```
+
+---
+
+
+
+
